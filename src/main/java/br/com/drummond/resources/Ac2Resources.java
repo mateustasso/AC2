@@ -19,6 +19,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Ac2Resources {
 	
+	@RequestMapping(value = "/health", method = RequestMethod.GET)
+	public String test() {
+
+		return "Sistema Drummond API ativo - " + new SimpleDateFormat("yyyyMM-dd HH:mm:ss").format(new Date());
+
+	}
+	
+	
 	@RequestMapping(value = "/soma/{valor1}/{valor2}", method = RequestMethod.GET)
 	public Integer soma(@PathVariable Integer valor1, @PathVariable Integer valor2) {
 		
